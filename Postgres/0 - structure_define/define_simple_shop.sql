@@ -4,6 +4,7 @@
 
 CREATE TABLE IF NOT EXISTS user_instance (
     id SERIAL PRIMARY KEY,
+    username VARCHAR(32) UNIQUE NOT NULL,
     first_name VARCHAR(32),
     last_name VARCHAR(32),
     password_hash VARCHAR(64)
