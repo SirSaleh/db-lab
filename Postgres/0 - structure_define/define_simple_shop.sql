@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS user_instance (
     username VARCHAR(32) UNIQUE NOT NULL,
     first_name VARCHAR(32),
     last_name VARCHAR(32),
-    password_hash VARCHAR(64)
+    password_hash VARCHAR(64) NOT NULL
 );
 
 -- Product Table
