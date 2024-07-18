@@ -38,6 +38,6 @@ CREATE TABLE IF NOT EXISTS order_instance (
 
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     
-    CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES user_instance(id),
-    CONSTRAINT fk_product FOREIGN KEY (product_id) REFERENCES product(id)
+    CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES user_instance(id) ON DELETE CASCADE,
+    CONSTRAINT fk_product FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE
 );
