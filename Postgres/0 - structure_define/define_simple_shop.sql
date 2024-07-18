@@ -1,3 +1,10 @@
+-- DROP OLD TABLES
+
+DROP TABLE IF EXISTS order_instance;
+DROP TABLE IF EXISTS user_instance;
+DROP TABLE IF EXISTS product;
+
+
 -- Define Shop Tables
 
 -- Users Table
