@@ -33,36 +33,65 @@ INSERT INTO user_instance (first_name, last_name, username, password_hash)
 
 -- CREATE PRODUCTS
 
-INSERT INTO product (title, desc_text, price)
-    VALUES
-    ('Blue Widget', 'A high-quality blue widget for your needs', 19.99),
-    ('Red Widget', 'A stylish red widget that stands out', 29.99),
-    ('Green Widget', 'An eco-friendly green widget', 39.99),
-    ('Yellow Widget', 'Bright yellow widget for sunny days', 49.99),
-    ('Black Widget', 'Sleek and modern black widget', 59.99),
-    ('White Widget', 'Classic white widget for any occasion', 69.99),
-    ('Silver Widget', 'Elegant silver widget with a metallic finish', 79.99),
-    ('Gold Widget', 'Luxurious gold-plated widget', 89.99),
-    ('Pink Widget', 'Adorable pink widget for a touch of color', 99.99),
-    ('Purple Widget', 'Royal purple widget for a regal look', 109.99),
-    ('Orange Widget', 'Vibrant orange widget that energizes', 119.99),
-    ('Brown Widget', 'Earthy brown widget for a natural feel', 129.99),
-    ('Gray Widget', 'Subtle gray widget that blends in perfectly', 139.99),
-    ('Navy Widget', 'Sophisticated navy blue widget', 149.99),
-    ('Teal Widget', 'Refreshing teal widget for a cool vibe', 159.99),
-    ('Maroon Widget', 'Rich maroon widget that exudes warmth', 169.99),
-    ('Cyan Widget', 'Bright cyan widget for a splash of color', 179.99),
-    ('Magenta Widget', 'Intense magenta widget for bold statements', 189.99),
-    ('Lime Widget', 'Zesty lime green widget for a fresh look', 199.99),
-    ('Turquoise Widget', 'Turquoise widget inspired by the sea', 209.99),
-    ('Indigo Widget', 'Deep indigo widget with a mystical allure', 219.99),
-    ('Beige Widget', 'Soft beige widget for a subtle touch', 229.99),
-    ('Olive Widget', 'Earth-toned olive widget', 239.99),
-    ('Plum Widget', 'Delicious plum-colored widget', 249.99),
-    ('Violet Widget', 'Lovely violet widget for a charming appeal', 259.99),
-    ('Tan Widget', 'Warm tan widget for a cozy atmosphere', 269.99),
-    ('Peach Widget', 'Gentle peach widget for a delicate touch', 279.99),
-    ('Salmon Widget', 'Salmon-colored widget that stands out', 289.99),
-    ('Sky Blue Widget', 'Light and airy sky blue widget', 299.99);
 
-
+-- Seed Data for order_instance Table
+INSERT INTO order_instance (customer_note, user_id, product_id)
+SELECT 'Please deliver between 10am-12pm', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Gift wrap this item', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Need this urgently', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Include a thank you note', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Leave at the front door', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Call upon arrival', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Deliver to the neighbor if not home', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Leave in the mailbox', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Ring the bell twice', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Leave in the backyard', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Hand it to the security guard', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Do not leave unattended', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Contact me if no one answers', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Leave under the doormat', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p
+UNION ALL
+SELECT 'Leave in the garage', u.id, p.id
+FROM (SELECT id FROM user_instance ORDER BY RANDOM() LIMIT 1) u,
+     (SELECT id FROM product ORDER BY RANDOM() LIMIT 1) p;
