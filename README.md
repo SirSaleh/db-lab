@@ -1,6 +1,6 @@
-# SQL lab
+# db lab
 
-This repository contains a set of ready-to-use models, seeders, and practice queries for a SQL databases (currently based on postgres). It is designed to help you quickly set up and experiment with database schemas, data seeding, and complex query execution.
+This repository contains a set of ready-to-use models, seeders, and practice queries for a database (currently based on postgres). It is designed to help you quickly set up and experiment with database schemas, data seeding, and complex query execution.
 
 ### Features Definition
 
