@@ -12,4 +12,4 @@ This repository contains a set of ready-to-use models, seeders, and practice que
 
 | name | desription | 
 | ---- | ---------- |
-| [PostgreSQL](https://github.com/SirSaleh/db-lab/tree/main/Postgre) | PostgreSQL, also known as Postgres, is a free and open-source relational database management system  |
+| [PostgreSQL](https://github.com/SirSaleh/db-lab/tree/main/Postgre) | PostgreSQL, also known as Postgres, is a free and open-source relational database management system.  |
