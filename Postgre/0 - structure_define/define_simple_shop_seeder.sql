@@ -33,6 +33,38 @@ INSERT INTO user_instance (first_name, last_name, username, password_hash)
 
 -- CREATE PRODUCTS
 
+INSERT INTO product (title, desc_text, price)
+VALUES
+('Blue Widget', 'A high-quality blue widget for your needs', 19.99),
+('Red Widget', 'A stylish red widget that stands out', 29.99),
+('Green Widget', 'An eco-friendly green widget', 39.99),
+('Yellow Widget', 'Bright yellow widget for sunny days', 49.99),
+('Black Widget', 'Sleek and modern black widget', 59.99),
+('White Widget', 'A clean and simple white widget', 69.99),
+('Purple Widget', 'A vibrant purple widget for unique tastes', 79.99),
+('Orange Widget', 'An energetic orange widget', 89.99),
+('Pink Widget', 'A charming pink widget', 99.99),
+('Brown Widget', 'A robust brown widget for tough jobs', 109.99),
+('Gray Widget', 'A neutral gray widget for any occasion', 119.99),
+('Cyan Widget', 'A refreshing cyan widget', 129.99),
+('Magenta Widget', 'A bold magenta widget', 139.99),
+('Silver Widget', 'A shiny silver widget', 149.99),
+('Gold Widget', 'A luxurious gold widget', 159.99),
+('Lime Widget', 'A zesty lime widget', 169.99),
+('Teal Widget', 'A sophisticated teal widget', 179.99),
+('Navy Widget', 'A professional navy widget', 189.99),
+('Olive Widget', 'An olive widget with a classic look', 199.99),
+('Beige Widget', 'A versatile beige widget', 209.99),
+('Turquoise Widget', 'A calming turquoise widget', 219.99),
+('Maroon Widget', 'A rich maroon widget', 229.99),
+('Peach Widget', 'A soft peach widget', 239.99),
+('Tan Widget', 'A neutral tan widget', 249.99),
+('Sky Blue Widget', 'A sky blue widget for a serene look', 259.99),
+('Indigo Widget', 'A deep indigo widget', 269.99),
+('Salmon Widget', 'A stylish salmon widget', 279.99),
+('Plum Widget', 'A plush plum widget', 289.99),
+('Mint Widget', 'A cool mint widget', 299.99);
+
 
 -- Seed Data for order_instance Table
 INSERT INTO order_instance (customer_note, user_id, product_id)
