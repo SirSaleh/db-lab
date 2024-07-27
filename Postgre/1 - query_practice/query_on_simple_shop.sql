@@ -31,6 +31,23 @@ LEFT JOIN
 GROUP BY
     u.id;
 
+-- GET money spent by each user limited to first three products
+
+SELECT
+    u.id,
+    u.username,
+    u.first_name || ' ' || u.last_name AS full_name,
+    SUM(COALESCE(p.price, 0)) AS total_count
+FROM
+    user_instance u
+LEFT JOIN
+    order_instance o
+        ON o.user_id=u.id
+LEFT JOIN
+    product p
+        ON p.id=o.product_id WHERE p.id IN (SELECT id FROM product ORDER BY id LIMIT 3)
+GROUP BY u.id ORDER BY id;
+
 -- Get total sale of each product
 
 SELECT
