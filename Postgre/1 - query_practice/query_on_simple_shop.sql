@@ -12,6 +12,14 @@ SELECT id, first_name FROM user_instance ORDER BY id DESC LIMIT 3;
 
 SELECT title, price FROM product WHERE price=(SELECT MIN(PRICE) FROM product);
 
+-- GET three cheapest products
+
+SELECT title, price FROM product ORDER BY price LIMIT 3;
+
+-- GET three most expensive products
+
+SELECT title, price FROM product ORDER BY price DESC LIMIT 3;
+
 -- GET the most expensive product
 
 SELECT title, price FROM product WHERE price=(SELECT MAX(PRICE) FROM product); 
