@@ -67,3 +67,23 @@ LEFT JOIN
     product p ON o.product_id = p.id
 GROUP BY
     p.id;
+
+
+-- Get list of sales in last 10 days and show username,
+-- and product title, elapsed_in_minutes, and elapsed_in_days
+
+SELECT
+    u.username AS customer_name,
+    p.title AS product_title,
+    ROUND(EXTRACT(EPOCH FROM (NOW() - o.created_at))/60) AS elapsed_in_minutes,
+    ROUND(EXTRACT(EPOCH FROM (NOW() - o.created_at))/60/60/24) AS elapsed_in_days
+FROM
+    order_instance o
+LEFT JOIN
+    user_instance u
+    ON o.user_id=u.id
+LEFT JOIN
+    product p
+    ON o.product_id=p.id
+WHERE o.created_at > (NOW() - INTERVAL '10 day');
+
