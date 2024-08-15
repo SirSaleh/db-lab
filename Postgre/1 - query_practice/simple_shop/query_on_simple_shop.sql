@@ -1,5 +1,9 @@
 -- depends on /Postgres/0 - structure_define/*
 
+-- ================================================
+-- ============RETRIEVE data from tables===========
+-- ================================================
+
 -- Get first three users
 
 SELECT id, first_name FROM user_instance ORDER BY id ASC LIMIT 3; 
@@ -68,7 +72,6 @@ LEFT JOIN
 GROUP BY
     p.id;
 
-
 -- Get list of sales in last 10 days and show username,
 -- and product title, elapsed_in_minutes, and elapsed_in_days
 
@@ -98,3 +101,26 @@ LEFT JOIN
     product p ON o.product_id=p.id
 GROUP BY
     EXTRACT(YEAR FROM o.created_at);
+
+
+-- ================================================
+-- ============EDIT data IN THE tables=============
+-- ================================================
+
+-- decrease 2 years from the
+-- creation date of the first
+-- order available
+
+UPDATE order_instance
+    SET
+        created_at = DATE_TRUNC('year', created_at) - INTERVAL '2 years'
+    WHERE
+        id = (SELECT id FROM order_instance ORDER BY id DESC LIMIT 1);
+
+-- and also the second order
+
+UPDATE order_instance
+    SET
+        created_at = DATE_TRUNC('year', created_at) - INTERVAL '2 years'
+    WHERE
+        id = (SELECT id FROM order_instance ORDER BY id DESC LIMIT 1 OFFSET 1);
