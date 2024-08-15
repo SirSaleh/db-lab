@@ -87,3 +87,14 @@ LEFT JOIN
     ON o.product_id=p.id
 WHERE o.created_at > (NOW() - INTERVAL '10 day');
 
+-- GET total sales of all products 
+-- for each year!
+
+SELECT 
+    EXTRACT(YEAR FROM o.created_at),
+    SUM(COALESCE(p.price, 0))
+        FROM order_instance o
+LEFT JOIN
+    product p ON o.product_id=p.id
+GROUP BY
+    EXTRACT(YEAR FROM o.created_at);
