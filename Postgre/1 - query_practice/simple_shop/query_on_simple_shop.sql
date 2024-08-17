@@ -124,3 +124,16 @@ UPDATE order_instance
         created_at = DATE_TRUNC('year', created_at) - INTERVAL '2 years'
     WHERE
         id = (SELECT id FROM order_instance ORDER BY id DESC LIMIT 1 OFFSET 1);
+
+
+-- ================================================
+-- ===========create data in THE tables============
+-- ================================================
+
+-- create order last user orders first product
+
+INSERT INTO order_instance
+    (user_id, product_id, customer_note) VALUES 
+    (   (SELECT id from user_instance ORDER BY id DESC LIMIT 1),
+        (SELECT id from product ORDER BY id LIMIT 1),
+        'I need this product ASAP, PLEASSSSE');
