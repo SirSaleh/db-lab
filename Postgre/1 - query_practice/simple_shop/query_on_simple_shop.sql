@@ -127,7 +127,7 @@ UPDATE order_instance
 
 
 -- ================================================
--- ===========create data in THE tables============
+-- ===========create data in the tables============
 -- ================================================
 
 -- create order last user orders first product
@@ -137,3 +137,12 @@ INSERT INTO order_instance
     (   (SELECT id from user_instance ORDER BY id DESC LIMIT 1),
         (SELECT id from product ORDER BY id LIMIT 1),
         'I need this product ASAP, PLEASSSSE');
+
+
+-- ================================================
+-- ===========delete data in the tables============
+-- ================================================
+
+--delete the last order
+
+DELETE FROM order_instance WHERE id=(SELECT id FROM order_instance ORDER BY id DESC LIMIT 1);
