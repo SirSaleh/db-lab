@@ -4,6 +4,10 @@
 -- ============RETRIEVE data from tables===========
 -- ================================================
 
+-- Get products with names contains "ple"
+
+SELECT * FROM product WHERE title LIKE '%ple%';
+
 -- Get first three users
 
 SELECT id, first_name FROM user_instance ORDER BY id ASC LIMIT 3; 
@@ -143,6 +147,6 @@ INSERT INTO order_instance
 -- ===========delete data in the tables============
 -- ================================================
 
---delete the last order
+-- delete the last order
 
 DELETE FROM order_instance WHERE id=(SELECT id FROM order_instance ORDER BY id DESC LIMIT 1);
