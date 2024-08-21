@@ -32,6 +32,23 @@ SELECT title, price FROM product ORDER BY price DESC LIMIT 3;
 
 SELECT title, price FROM product WHERE price=(SELECT MAX(PRICE) FROM product); 
 
+
+-- GET order count by each user
+
+SELECT 
+    u.id AS user_id,
+    u.first_name || ' ' || u.last_name AS full_name,
+    COUNT(o.id) AS order_count
+FROM 
+    user_instance u
+LEFT JOIN 
+    order_instance o ON u.id = o.user_id
+GROUP BY 
+    u.id, u.first_name, u.last_name
+ORDER BY 
+    order_count DESC;
+
+
 -- GET money spent by each user
 
 SELECT
