@@ -41,3 +41,7 @@ CREATE TABLE IF NOT EXISTS order_instance (
     CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES user_instance(id) ON DELETE CASCADE,
     CONSTRAINT fk_product FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE
 );
+
+
+CREATE INDEX idx_user_id ON order_instance(user_id);
+CREATE INDEX idx_product_id ON order_instance(product_id);
